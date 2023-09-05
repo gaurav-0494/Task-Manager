@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: relative;
+}
+
+.todo-app {
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row select {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.mic-button {
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    margin-left: -24px;
+    color: #002765;
+    animation: fadeIn 5s;
+}
+
+@keyframes fadeIn {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.row select:hover {
+    background: #e0433b;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    flex-direction: center;
+}
+
+input {
+    flex: 1;
+    background: transparent;
+    padding: 10px;
+    animation: popout 1s;
+    border: 2px solid rgb(51, 49, 49);
+    border-radius: 30px;
+    margin-left: 23px;
+}
+
+#myInput {
+    animation: popout 1s;
+    border: 2px solid rgb(52, 41, 41);
+    border-radius: 30px;
+}
+
+@keyframes popout {
+    0%{transform:scale(0)};
+    80%{transform:scale(1.1)};
+    to{transform:scale(1)};
+}
+
+@-webkit-keyframes popout {
+    0%{-webkit-transform:scale(0)};
+    80%{-webkit-transform:scale(1.2)};
+    to{-webkit-transform:scale(1)};
+}
+
+#category-select {
+    margin: 23px;
+    border: 2px solid rgb(50, 46, 46);
+    border-radius: 30px;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    margin: 2px 8px;
+    box-shadow: 3px 4px 5px 4px grey;
+}
+
+.sort-button {
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    margin: 5px;
+    margin-left: 10px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 2px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li.overdue {
+    color: #ff0000;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 1px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}
+
+@media (max-width: 768px) {
+    .todo-app {
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .row select,
+    .row input,
+    #myInput {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .container {
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .mic-button {
+        margin-left: 0;
+    }
+
+    ul li {
+        padding: 12px 8px 12px 30px;
+    }
+}
+
